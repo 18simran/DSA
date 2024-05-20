@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Arraylist/Arraylist.iml" filepath="$PROJECT_DIR$/Arraylist/Arraylist.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/DSA_Java_Programs.iml" filepath="$PROJECT_DIR$/.idea/DSA_Java_Programs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LinkedLists/LinkedLists.iml" filepath="$PROJECT_DIR$/LinkedLists/LinkedLists.iml" />
     </modules>
   </component>
 </project>
