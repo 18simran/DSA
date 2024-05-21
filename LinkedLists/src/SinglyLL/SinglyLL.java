@@ -1,3 +1,5 @@
+package SinglyLL;
+
 public class SinglyLL
 {
     private Node head ;
