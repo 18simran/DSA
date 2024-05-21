@@ -1,5 +1,3 @@
-import Practice.Try.LLpractice;
-
 public class SinglyLL
 {
     private Node head ;
@@ -48,6 +46,79 @@ public class SinglyLL
 
         size += 1 ;
     }
+public void insert(int val,int index )
+{
+    if(index == 0)
+    {
+        insertFirst(val);
+        return ;
+    }
+    if(index == size)
+    {
+        insertLast(val);
+        return ;
+    }
+    Node temp = head ;
+  for(int i = 1 ;i < index ;i++)
+  {
+      temp = temp.next ;
+  }
+  Node node = new Node(val,temp.next ) ;
+  temp.next = node ;
+
+  size++ ;
+}
+public void  DeleteFirst()
+{
+    int val = head.value ;
+
+    head = head.next ;
+    if(head == null)
+    {
+        tail = null ;
+    }
+    size-- ;
+
+}
+public void DeleteLast()
+{
+    if(size <= 1 )
+    {
+        DeleteFirst();
+    }
+
+Node secondlast = head ;
+Node lastnode = head.next ;
+while(lastnode.next != null)
+{
+    lastnode = lastnode.next ;
+    secondlast = secondlast.next ;
+}
+tail = secondlast ;
+secondlast.next = null ;
+
+
+}
+public void Delete(int index ) {
+    Node temp = head;
+    if(index == 0)
+    {
+        DeleteFirst();
+        return ;
+    }
+if(index >= size )
+{
+    System.out.println("Array index out of bound ");
+    return ;
+}
+    for (int i = 0; i < index-1; i++) {
+        temp = temp.next;
+
+    }
+    Node next = temp.next.next ;
+    temp.next = next ;
+    size-- ;
+}
 
     private class Node{
         private int value ;
