@@ -72,7 +72,6 @@ public void insert(int val,int index )
 }
 public void  DeleteFirst()
 {
-    int val = head.value ;
 
     head = head.next ;
     if(head == null)
