@@ -1,62 +1,76 @@
 package Practice.Try;
-
+import SinglyLL.SinglyLL;
 public class LLpractice
 {
-    private   Node head ;
+    private Node head ;
     private Node tail ;
-    private int  size ;
-    LLpractice()
+    public int size ;
+  public   LLpractice()
+  {
+      this.size = 0;
+  }
+  public void insertFirst(int val )
+  {
+      Node node = new Node(val);
+      node.next = head ;
+      head = node ;
+      if(tail == null)
+      {
+          tail = head ;
+      }
+   size += 1;
+  }
+  public void insertLast(int val)
+  {
+      Node node = new Node(val);
+      tail.next = node ;
+      tail = node ;
+      size += 1 ;
+
+  }
+public void deleteFirst()
+{
+    Node temp = head ;
+    head = temp.next ;
+    size-- ;
+}
+public void deleteLast()
+{
+    Node secondlast = head ;
+    Node last = head.next ;
+    while(last.next != null)
     {
-        this.size =  0 ;
+
+      last = last.next ;
+      secondlast = secondlast.next ;
     }
-  public  void insertFirst(int val)
+     tail = secondlast ;
+    tail.next = null ;
+    size-- ;
+}
+  public void display()
+  {
+      Node temp =head ;
+      while(temp != null)
+      {
+          System.out.print(temp.val + "--> ");
+          temp = temp.next ;
+      }
+
+  }
+    class Node
     {
-        Node node = new Node(val) ;
-   node.next = head ;
-   head = node ;
-        if(tail == null)
+        private int val ;
+        private Node next ;
+        public Node(int val)
         {
-           tail = head ;
-        }
-size+= 1 ;
+            this.val = val;
 
-    }
-    public void insertLast(int val)
-    {
-        if(tail == null)
+        }
+        public Node(int val , Node next)
         {
-            insertFirst(val);
-            return;
-        }
-       Node node = new Node(val)  ;
-           tail.next = node;
-          tail = node ;
-
-       size += 1 ;
-    }
- public void display()
-    {
-        Node temp = head ;
-        while(temp != null)
-        {
-            System.out.print(temp.value + " --> ");
-            temp=temp.next ;
-
+            this.val =0 ;
+            this.next = next ;
         }
     }
-    public class Node
-    {
-    public int value ;
-       private Node next ;
-       Node(int value)
-       {
-          this.value = value ;
-       }
-       Node(int value, Node next)
-       {
-           this.value = value ;
-           this.next  = next ;
-       }
-    }
-
 }
