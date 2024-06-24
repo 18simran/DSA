@@ -5,7 +5,6 @@ public class SinglyLL
     private Node head ;
     private Node tail;
     private int size ;
-
     public SinglyLL()
     {
         this.size = 0 ;
@@ -19,7 +18,6 @@ public class SinglyLL
             System.out.print(temp.value + " --> ");
             temp = temp.next ;
         }
-
     }
     public void insertFirst(int val)
     {
