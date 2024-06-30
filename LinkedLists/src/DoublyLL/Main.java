@@ -26,6 +26,7 @@ public class Main
        int item =  list.find(25);
         System.out.println(item );
         list.reverseTraverse();
+        list.display();
 
     }
 }
