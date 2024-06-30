@@ -1,76 +1,101 @@
 package Practice.Try;
-import SinglyLL.SinglyLL;
+
 public class LLpractice
 {
-    private Node head ;
+    public static Node head;
+    int size ;
+    int indexn;
     private Node tail ;
-    public int size ;
-  public   LLpractice()
-  {
-      this.size = 0;
-  }
-  public void insertFirst(int val )
-  {
-      Node node = new Node(val);
-      node.next = head ;
-      head = node ;
-      if(tail == null)
-      {
-          tail = head ;
-      }
-   size += 1;
-  }
-  public void insertLast(int val)
-  {
-      Node node = new Node(val);
-      tail.next = node ;
-      tail = node ;
-      size += 1 ;
+public void insertAtIndex(int val, int index)
+{
+    if(index == 0)
+    {
+        insertFirst(val);
+        indexn++ ;
+        return;
+    }
+    if(index == indexn)
+    {
+        //deleteend
+    }
+    int x = 1 ;
+    Node node = new Node(val,index ) ;
+    Node temp = head ;
+while(x  <  index)
+{
+    temp = temp.next ;
+    x++ ;
 
-  }
-public void deleteFirst()
+}
+
+node.next = temp.next ;
+temp.next = node ;
+size++ ;
+indexn++ ;
+
+}
+public void deleteAtIndex(int index)
 {
     Node temp = head ;
-    head = temp.next ;
-    size-- ;
-}
-public void deleteLast()
-{
-    Node secondlast = head ;
-    Node last = head.next ;
-    while(last.next != null)
+    int x = 1 ;
+    if(index == 0)
+    {
+        head = temp.next ;
+        size-- ;
+    }
+    if(index == indexn)
     {
 
-      last = last.next ;
-      secondlast = secondlast.next ;
     }
-     tail = secondlast ;
-    tail.next = null ;
-    size-- ;
+    while(x < index) {
+        temp = temp.next ;
+        x++ ;
+    }
+    temp.next = temp.next.next ;
+    indexn-- ;
 }
-  public void display()
-  {
-      Node temp =head ;
-      while(temp != null)
-      {
-          System.out.print(temp.val + "--> ");
-          temp = temp.next ;
-      }
 
-  }
+    public void insertFirst(int val)
+    {
+        Node node = new Node(val) ;
+        node.next = head ;
+        head = node ;
+        size+= 1 ;
+        indexn++;
+
+    }
+    public void display()
+    {
+        Node temp = head ;
+        while(temp != null)
+        {
+            System.out.print(temp.val + "---> ");
+            temp = temp.next ;
+        }
+    }
+    public void displayR(Node head)
+    {
+        if(head == null) return ;
+        displayR(head.next) ;
+        System.out.print(head.val + " ");
+
+    }
     class Node
     {
-        private int val ;
-        private Node next ;
-        public Node(int val)
+        public int val ;
+        private Node prev ;
+        private  Node next ;
+        public int index ;
+      public  Node(int val)
         {
-            this.val = val;
 
+            this.val = val;
         }
-        public Node(int val , Node next)
+        public Node(int val, int index )
         {
-            this.val =0 ;
-            this.next = next ;
+            this.val = val ;
+            this.index = index  ;
         }
+
     }
 }
