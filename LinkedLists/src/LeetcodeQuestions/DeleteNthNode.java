@@ -77,5 +77,6 @@ public class DeleteNthNode
         node.display();
         node.Delete(5);
         node.display() ;
+
     }
 }
