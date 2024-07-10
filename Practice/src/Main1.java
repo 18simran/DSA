@@ -6,24 +6,24 @@ public class Main1
         int n2 = r - mid ;
         int [] left = new int[n1];
         int [] right = new int [n2];
-        int i , j , k   ;
-        for(i = 0 ; i< n1; i++)
+
+        for(int i = 0 ; i< n1; i++)
         {
            left[i]= arr[l + i] ;
         }
-        for(j = 0 ; j < n2 ; j++)
+        for(int j = 0 ; j < n2 ; j++)
         {
             right[j] = arr[mid + 1 +  j] ;
         }
-        i = 0; j = 0; k= l ;
+       int  i = 0; int j = 0; int k= l ;
         while(i < n1 && j < n2)
         {
             if (left[i] <= right[j])
             {
-                arr[k++] = arr[i++];
+                arr[k++] = left[i++];
             }
             else {
-                arr[k++] = arr[j++];
+                arr[k++] = right[j++];
             }
         }
         while (i < n1)
