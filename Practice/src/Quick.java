@@ -1,5 +1,6 @@
-public class Quick {
-    public static int partition(int arr[],int lb,int ub)
+public class Quick
+{
+    public static int partition(int[] arr, int lb, int ub)
     {
         int pivot = arr[ub] ;
         int i = lb- 1 ;
@@ -19,7 +20,7 @@ public class Quick {
         arr[ub] = temp ;
         return i ;
     }
-    public static void quicksort(int arr[],int lb,int ub)
+    public static void quicksort(int[] arr, int lb, int ub)
     {
         if(lb < ub)
         {
@@ -32,12 +33,11 @@ public class Quick {
     //divide and conquer method
     public static void main(String[] args)
     {
-        int arr[] = {5,3,8,2,7,6,1,4,9};
+        int[] arr = {5,3,8,2,7,6,1,4,9};
 
         quicksort(arr, 0 , arr.length- 1);
-        for(int i =0 ;i < arr.length ;i++)
-        {
-            System.out.print(arr[i] + " ");
+        for (int j : arr) {
+            System.out.print(j + " ");
         }
         System.out.println();
     }
