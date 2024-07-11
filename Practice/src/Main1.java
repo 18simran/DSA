@@ -34,7 +34,6 @@ public class Main1
         {
             arr[k++]= right[j++] ;
         }
-
     }
 static void mergeSort(int[] arr,int l , int r){
     if(l >= r)
@@ -53,8 +52,6 @@ static void displayArr(int[]arr)
         System.out.print(i + " ");
     }
 }
-
-
     public static void main(String[] args) {
         int arr[]= {4,1,3,5,2};
         int n = arr.length;
